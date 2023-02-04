@@ -1,38 +1,193 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: hsl(210deg, 46%, 95%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card {
+  display: flex;
+  background-color: white;
+  width: 700px;
+  height: 250px;
+  border-radius: 10px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card .card-image {
+  width: 40%;
+  border-radius: 10px 0px 0px 10px;
+}
+.card .card-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px 0px 0px 10px;
+}
+.card .card-content {
+  width: 60%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 30px 40px 30px 40px;
+}
+.card .card-content h1 {
+  font-size: 1.2rem;
+  color: hsl(217deg, 19%, 35%);
+}
+.card .card-content p {
+  font-size: 0.8rem;
+  color: hsl(212deg, 23%, 69%);
+  margin-top: 15px;
+}
+.card .card-content img {
+  border-radius: 100px;
+  margin-top: 15px;
+}
+.card .bottom-content {
+  display: flex;
+  height: 20%;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+.card .bottom-content .person {
+  display: flex;
+}
+.card .bottom-content .person ul {
+  list-style: none;
+  padding: 10px;
+  font-size: 0.75rem;
+}
+.card .bottom-content .person li {
+  margin-top: 3px;
+}
+.card .bottom-content .person li:first-child {
+  font-weight: bold;
+}
+.card .bottom-content .person li:nth-child(2) {
+  color: hsl(212deg, 23%, 69%);
+}
+.card .bottom-content .person .person-img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 32px;
+  height: 32px;
+}
+.card .bottom-content .button {
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+  background-color: gainsboro;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.card .bottom-content .button img {
+  width: 50%;
+  height: 50%;
+  margin-top: 8px !important;
+}
+.card .bottom-content .button-active {
+  background-color: hsl(214deg, 17%, 51%);
+}
+.card .bottom-content .button-active img {
+  filter: brightness(0%) invert(100%);
+}
+.card .bottom-content .share {
+  position: absolute;
+  background-color: hsl(217deg, 19%, 35%);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 185px;
+  height: 48px;
+  border-radius: 10px;
+  padding: 10px;
+  color: rgb(235, 235, 235);
+  font-size: 0.9rem;
+  margin: -4rem 14.5rem;
+}
+.card .bottom-content .share img {
+  margin-top: 0px !important;
+}
+.card .bottom-content .share span {
+  display: inline;
+}
+.card .bottom-content .share::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: #40445e;
+  border-bottom: 0;
+  margin-left: -10px;
+  margin-bottom: -8px;
+}
+.card .bottom-content .share-false {
+  display: none;
+}
+.card .bottom-content .button:hover {
+  cursor: pointer;
+}
+.card .bottom-content img:hover {
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 825px) {
+  .card {
+    flex-direction: column;
+    width: 350px;
+    height: 585px;
+    padding: 0px !important;
+    border-radius: 10px;
   }
-  to {
-    transform: rotate(360deg);
+  .card .card-image {
+    width: 100%;
+    height: 50%;
   }
-}
+  .card .card-image img {
+    border-radius: 10px 10px 0px 0px !important;
+  }
+  .card .card-content {
+    width: 100%;
+    justify-content: flex-start !important;
+  }
+  .card .card-content .bottom-content {
+    height: 15%;
+  }
+  .card .card-content .bottom-content .person {
+    width: 70%;
+  }
+  .card .card-content .bottom-content .button {
+    z-index: 1;
+    margin-top: 25px;
+  }
+  .card .card-content .bottom-content .share {
+    width: 350px;
+    height: 60px;
+    border-radius: 10px;
+    color: rgb(235, 235, 235);
+    font-size: 0.9rem;
+    margin: 13px -42px;
+    justify-content: left;
+    z-index: 0;
+  }
+  .card .card-content .bottom-content .share img, .card .card-content .bottom-content .share span {
+    margin-left: 25px;
+  }
+  .card .card-content .bottom-content .share::after {
+    display: none;
+  }
+}/*# sourceMappingURL=App.css.map */
